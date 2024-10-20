@@ -36,4 +36,9 @@ export class StripeController {
       );
     }
   }
+
+  @Post('retrieve-payment-intent')
+  async retrievePaymentIntent(@Body() body: { paymentIntentId: string }) {
+    return await this.stripeService.retrievePaymentIntent(body.paymentIntentId);
+  }
 }

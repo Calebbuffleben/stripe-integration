@@ -24,4 +24,8 @@ export class StripeService {
       throw new Error('Unable to create payments');
     }
   }
+
+  async retrievePaymentIntent(paymentIntentId: string) {
+    return await this.stripe.paymentIntents.retrieve(paymentIntentId);
+  }
 }
